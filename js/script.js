@@ -4,10 +4,11 @@ const cards = document.querySelectorAll('.card'),
     closeTextarea = document.querySelector('.other__close'),
     photos = document.querySelectorAll('.photo__table-img'),
     callTable = document.querySelectorAll('.call-table'),
-    closeTable = document.querySelector('.photo__modal-close');
+    closeTable = document.querySelector('.photo__modal-close'),
     photoTable = document.querySelector('.photo__modal'), 
     photoCard = document.querySelectorAll('.photo__card'),
     photoRow = document.querySelector('.photo__row');
+ 
 
 
 
@@ -59,6 +60,7 @@ callTable.forEach(e => {
         photoTable.classList.add('active')
     })
 })
+
 
 closeTable.addEventListener('click', () => {
     photoTable.classList.remove('active')

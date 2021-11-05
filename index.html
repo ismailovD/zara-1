@@ -35,13 +35,14 @@
                     <form action="" class="main__form form">
                         <h2 class="form__title"><span class="form__span">Get started</span>  Return & Exchange</h2>
                         <label class="form__label">
-                            <input type="text" class="form__inp form__order" placeholder="Order number"> 
+                            <input type="number" class="form__inp form__order" placeholder="Order number" required> 
                             <svg class="form__info">
                                 <use xlink:href="./svg/sprite.svg#info"></use>
                             </svg>
+                            <p class="form__info-hover">Lorem ipsum dolor sit amet.</p>
                         </label> 
                         <label class="form__label">
-                            <input type="text" class="form__inp form__auth" placeholder="Phone or E-mail">
+                            <input type="text" class="form__inp form__auth" placeholder="Phone or E-mail" required>
                         </label>
                         
                         <a  href="./pages/items.html"  class="form__btn"> Continue
@@ -56,5 +57,7 @@
         <footer class="footer">
             <img src="./images/footer.jpg" alt="footer" class="footer__img">
         </footer>
+
+        <script src="./js/index.js"></script>
     </body>
 </html>
