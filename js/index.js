@@ -36,7 +36,7 @@ const   inputOrder = document.querySelector('.form__order'),
 btn.addEventListener('click', (e)=> {   
     if(inputOrder.value.length > 0 && inputAuth.value.length > 0){
         e.preventDefault()
-        location.href = "/pages/items.html";
+        location.href = "/zara-1/pages/items.html";
     }
 })
 
