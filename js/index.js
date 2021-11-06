@@ -6,7 +6,7 @@ const   inputOrder = document.querySelector('.form__order'),
         inValNum = document.querySelector('.form__valid-num'),
         inValEmail = document.querySelector('.form__valid-email');
 
-        inputOrder.addEventListener('input', ()=> {
+        inputOrder.addEventListener('input', ()=> { 
             if(inputOrder.value == "911"){
                 inputOrder.classList.add('form__invalid')
                 inValNum.classList.add('active')
@@ -14,8 +14,9 @@ const   inputOrder = document.querySelector('.form__order'),
                 inputOrder.classList.remove('form__invalid')
                 inValNum.classList.remove('active')
             }
+            
         })
-        inputAuth.addEventListener('input', ()=> {
+        inputAuth.addEventListener('input', ()=> { 
             if(inputAuth.value == "911"){
                 inputAuth.classList.add('form__invalid')
                 inValEmail.classList.add('active')
@@ -32,12 +33,11 @@ const   inputOrder = document.querySelector('.form__order'),
             inputHover.style.opacity = "0"
         })
 
-btn.addEventListener('click', (e)=> {
-    e.preventDefault 
- 
-    console.log(inputOrder.value.length);
+btn.addEventListener('click', (e)=> {   
     if(inputOrder.value.length > 0 && inputAuth.value.length > 0){
-        location.replace("/pages/items.html"); 
-        
+        e.preventDefault()
+        location.href = "/pages/items.html";
     }
 })
+
+ 
