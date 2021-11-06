@@ -214,6 +214,7 @@ body {
 .form__btn {
     width: 100%;
     background: var(--blue);
+    border: none;
     border-radius: 6px;
     color: var(--white);
     font-family: var(--f700-nexa);
@@ -230,7 +231,27 @@ body {
     color: var(--white);
     box-shadow: var(--btn-shadow);
 }
+.form__valid-num,
+.form__valid-email {
+    color: var(--red);
+    font-family: var(--f400-lato);
+    padding:3px 10px;   
+    box-shadow: var(--btn-shadow);
+    position: absolute;
+    transition: 1s;
+    z-index: 10;
+    background: var(--white); 
+    font-size: 16px;
+    border-radius: 4px; 
+    width: 100%;
+    opacity: 0;
+    text-transform: capitalize;
+}
 
+.form__valid-num.active,
+.form__valid-email.active { 
+   opacity: 1;
+}
 /* titles */
 
 .title {
