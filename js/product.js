@@ -5,7 +5,9 @@ const productTabs = document.querySelectorAll('.product__item'),
     productNAme = document.querySelector('.product__info-title'),
     productStars = document.querySelectorAll('.product__star'),
     productNewPrice = document.querySelector('.product__price-new'),
-    productOldPrice = document.querySelector('.product__price-old');
+    productOldPrice = document.querySelector('.product__price-old'),
+    productBottomTabs = document.querySelectorAll('.product__bottom-btn'),
+    productBottomShow = document.querySelectorAll('.product__bottom-show');
 
 let products = {
     targetImg1: {
@@ -30,7 +32,7 @@ let products = {
         name: "Name of the product",
         star: 4,
         newPrice: 31.05,
-        oldPrice: 35.01
+        oldPrice: 35.00
     }
 }
 
@@ -41,8 +43,8 @@ productStars.forEach(star => {
 for (let x = 0; x < products['targetImg1'].star; x++) {
     productStars[x].classList.add('like')
 }
-productNewPrice.innerHTML = "$" + products['targetImg1'].newPrice;
-productOldPrice.innerHTML = "$" + products['targetImg1'].oldPrice;
+productNewPrice.innerHTML = "$" + String(products['targetImg1'].newPrice.toFixed(2));
+productOldPrice.innerHTML = "$" + String(products['targetImg1'].oldPrice.toFixed(2));
 
 showImg.setAttribute('src', panelItem[0].children[0].getAttribute('src'))
 productTabs.forEach(el => {
@@ -76,10 +78,21 @@ panelItem.forEach(item => {
         for (let x = 0; x < products[objName].star; x++) {
             productStars[x].classList.add('like')
         }
-        productNewPrice.innerHTML = "$" + products[objName].newPrice;
-        productOldPrice.innerHTML = "$" + products[objName].oldPrice;
+        productNewPrice.innerHTML = "$" + String(products[objName].newPrice.toFixed(2));
+        productOldPrice.innerHTML = "$" + String(products[objName].oldPrice.toFixed(2));
 
     })
 })
 
 
+productBottomTabs.forEach(tab => {
+    tab.addEventListener('click', ()=> { 
+        for(let i = 0; i < productBottomTabs.length; i++){
+            productBottomTabs[i].classList.remove('active');
+            productBottomShow[i].classList.remove('active');
+        }
+        let showId = tab.getAttribute('data-code');
+        tab.classList.add('active');
+        document.querySelector("#" + showId).classList.add('active')
+    })
+})
