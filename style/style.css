@@ -877,7 +877,7 @@ body {
 .product__scoreboard { 
     position: relative;
     display: none;
-    padding: 78px 33px 50px;
+    padding: 50px 33px 41px;
     background: var(--white);
     border-radius: 0 0 10px 10px;
     height: 100%;
@@ -952,7 +952,7 @@ body {
 
 .product__info-link {
     width: 170px;
-    margin-bottom: 42px;
+    margin-bottom: 25px;
 }
 .product__info-logo {
     width: 100%;
@@ -965,11 +965,12 @@ body {
     font-size: 30px;
     line-height: 35px;
     color: var(--blue);
-    margin-bottom: 12px;
+    margin-bottom: 15px;
+    width: 80%;
 }
 .product__rating {
     display: flex;
-    margin-bottom: 11px;
+    margin-bottom: 17px;
     align-items: center;
 }
 .product__stars {
@@ -997,7 +998,7 @@ body {
 }
 
 .product__price {
-    margin-bottom: 41px;
+    margin-bottom: 15px;
 }
 
 .product__price-new {
@@ -1039,7 +1040,7 @@ body {
     margin-bottom: 14px;
 }
 .product__benefits-desc {
-    margin-bottom: 46px;
+    margin-bottom: 25px;
 }
 .product__benefits-pic {
     display: flex;
@@ -1048,8 +1049,7 @@ body {
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    background: var(--blue);
-    margin-bottom: 14px;
+    background: var(--blue); 
 }
 
 .product__benefits-icon {
@@ -1079,11 +1079,37 @@ body {
     border-radius: 6px;
     padding-top: 21px;
     padding-bottom: 20px;
+    font-family: var(--f700-nexa);
     text-transform: uppercase;
     color: var(--white);
     font-size: 14px;
-    line-height: 14px; 
+    line-height: 14px;  
+    overflow: hidden;
+    position: relative;
 }
+
+.product__buy-btn::after {
+    content: '';
+    width: 45px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -100px;
+    background: var(--white);
+    opacity: 0.15;
+    transform: skew(-30deg);
+    animation: 2s infinite btn-animation;
+}
+
+@keyframes btn-animation {
+    from {
+        left: -100px;
+    }
+    to{
+        left: 110%;
+    }
+}
+
 .product__buy-btn:hover {
     box-shadow: var(--btn-shadow);
 }
@@ -1312,7 +1338,7 @@ body {
 
     /* product.html */
     .product__card {
-        padding-bottom: 24px;
+        padding-bottom: 26px;
     }
     .product__top{
         padding-top: 50px;
@@ -1323,7 +1349,7 @@ body {
         max-width: 400px;
         padding-left: 0;
         margin: 0 auto;
-        padding-top: 20px;
+        padding-top: 0;
     }
 
     .product__scoreboard {
@@ -1349,6 +1375,7 @@ body {
     .product__bottom .product__buy-btn {
         display: inline-block;
         width: 50%;
+        margin-bottom: 15px;
     }
 
     .product__share { 
@@ -1357,7 +1384,7 @@ body {
     }
 
     .product__bottom {
-        padding-top: 41px;
+        padding-top: 15px;
         padding-bottom: 20px;
     }
     .product__bottom-title {
